@@ -3,7 +3,7 @@
 
     const props = defineProps({
     title: {
-        type: String,
+        type: [String, Object],
         required: true,
     },
     link: {
@@ -37,7 +37,7 @@
 </script>
 
 <template>
-  <nuxt-link :to="link"
+  <a :href="link"
     :class="[
       'text-[14px] w-fit transition-colors duration-300',
       linkClass,
@@ -45,9 +45,8 @@
         'hover:underline': state === 'basic' && !disabled
       }
     ]"
-    :href="disabled ? null : '#'"
     :aria-disabled="disabled"
   >
     {{ title }}
-    </nuxt-link>
+    </a>
 </template>

@@ -4,13 +4,18 @@
     import LanguageButton from '../UI/Buttons/LanguageButton.vue'
     import NavLink from '../UI/Buttons/NavLink.vue'
     import { ref, watchEffect, onMounted, onBeforeUnmount } from 'vue'
+    import { computed } from 'vue'
+
+    import { useI18n } from 'vue-i18n'
+
+    const { t } = useI18n()
 
     const links = [
-        { id: 0, href: '#', title: 'Главная' },
-        { id: 1, href: '#', title: 'Faq' },
-        { id: 2, href: '#', title: 'Как начать?' },
-        { id: 3, href: '#', title: 'Smart-contract' },
-        { id: 4, href: '#', title: 'Калькулятор' }
+        { id: 0, link: '#hero', title: computed(() => t('HOME_LINK')) },
+        { id: 1, link: '#faq', title: computed(() => t('FAQ_LINK')) },
+        { id: 2, link: '#how_start', title: computed(() => t('HOW_START_LINK')) },
+        { id: 3, link: '#contract', title: computed(() => t('CONTRACT_LINK')) },
+        { id: 4, link: '#calculator', title: computed(() => t('CALCULATOR_LINK')) }
     ]
 
     const isOpened = ref(false)
@@ -103,9 +108,9 @@
                 <menu class="flex flex-col gap-y-6">
                     <ul class="flex flex-col items-center text-[18px]">
                         <li v-for="el, index in links" :key="index" class="w-full border-b-[1px] border-[#25305B] last:border-none">
-                            <nuxt-link to="#" class="text-white flex h-[62px] items-center justify-center active:text-blue w-full">
+                            <a @click="() => isOpened = false" :href="el.link" class="text-white flex h-[62px] items-center justify-center active:text-blue w-full">
                                 {{ el.title }}
-                            </nuxt-link>
+                            </a>
                         </li>
                     </ul>
 

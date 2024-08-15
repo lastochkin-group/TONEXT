@@ -1,16 +1,20 @@
 <script setup>
 
-    import { Icon } from '@iconify/vue'
     import Logo from '../UI/Logos/Logo.vue'
     import LanguageButton from '../UI/Buttons/LanguageButton.vue'
     import NavLink from '../UI/Buttons/NavLink.vue'
+    import { computed } from 'vue'
+
+    import { useI18n } from 'vue-i18n'
+
+    const { t } = useI18n()
 
     const links = [
-        { id: 0, href: '#', title: 'Главная' },
-        { id: 1, href: '#', title: 'Faq' },
-        { id: 2, href: '#', title: 'Как начать?' },
-        { id: 3, href: '#', title: 'Smart-contract' },
-        { id: 4, href: '#', title: 'Калькулятор' }
+        { id: 0, link: '#hero', title: computed(() => t('HOME_LINK')) },
+        { id: 1, link: '#faq', title: computed(() => t('FAQ_LINK')) },
+        { id: 2, link: '#how_start', title: computed(() => t('HOW_START_LINK')) },
+        { id: 3, link: '#contract', title: computed(() => t('CONTRACT_LINK')) },
+        { id: 4, link: '#calculator', title: computed(() => t('CALCULATOR_LINK')) }
     ]
 
 </script>

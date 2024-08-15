@@ -1,7 +1,7 @@
 <script setup>
 
     defineProps({
-        step: Number,
+        step: String,
         title: String,
         description: String
     })

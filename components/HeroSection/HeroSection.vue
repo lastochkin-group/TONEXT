@@ -2,10 +2,14 @@
 
     import { Icon } from '@iconify/vue'
 
+    import { useI18n } from 'vue-i18n'
+
+    const { t } = useI18n()
+
 </script>
 
 <template>
-    <div class="flex flex-col">
+    <div class="flex flex-col" id="hero">
         <section class="overflow-hidden relative pt-16">
 
             <div class="absolute z-0 left-0 right-0 top-24 bottom-0 justify-between flex opacity-40">
@@ -15,15 +19,15 @@
 
             <div class="flex flex-col gap-y-6 relative p-4 container">
                 <div class="flex z-[1] flex-col gap-y-4 justify-center items-center">
-                    <span class="uppercase text-[14px] text-[#12172D] font-medium text-center">НАЧНИТЕ ЗАРАБАТЫВАТЬ ДО 4% ЕЖЕДНЕВНО</span>
+                    <span class="uppercase text-[14px] text-[#12172D] font-medium text-center">{{ $t('HERO_SUBTITLE') }}</span>
 
                     <h1 class="flex flex-col text-[64px] max-lg:text-[48px] max-md:text-[24px] transition-all font-bold justify-center items-center leading-tight">
-                        <span class="text-[#12172D]">Децентрализированный</span>
-                        <span class="text-blue">Liquid Staking TON</span>
+                        <span class="text-[#12172D]">{{ $t('HERO_TITLE_DARK') }}</span>
+                        <span class="text-blue">{{ $t('HERO_TITLE_BLUE') }}</span>
                     </h1>
 
                     <button class="h-[60px] bg-blue rounded-full text-white flex gap-x-4 items-center px-2">
-                        <span class="ml-8 text-[14px] font-bold">Начать сейчас</span>
+                        <span class="ml-8 text-[14px] font-bold">{{ $t('START_NOW') }}</span>
                         <span class="h-[44px] aspect-square bg-white flex justify-center items-center rounded-full">
                             <Icon icon="maki:arrow" class="text-[#12172D] text-[20px]" />
                         </span>
@@ -62,10 +66,10 @@
                         <Icon icon="ph:seal-check-light" class="text-[24px] text-white" />
                     </span>
 
-                    <h4 class="font-extrabold text-[#12172D] text-2xl max-lg:text-center">Начните стейкать,<br />зарабатывайте и<br />наслаждайтесь наградами</h4>
+                    <h4 class="font-extrabold text-[#12172D] text-2xl max-lg:text-center">{{ $t('STAKE_TITLE') }}</h4>
 
-                    <p class="text-[#12172D] max-lg:text-center">Ощутите рост вашего баланса TON прямо в вашем кошельке. Хотите узнать больше?</p>
-                    <p class="text-[#12172D] max-lg:text-center">Прокрутите страницу вниз, чтобы узнать, как это работает и в чем заключаются его основные преимущества.</p>
+                    <p class="text-[#12172D] max-lg:text-center">{{ $t('STAKE_SUBTITLE_1') }}</p>
+                    <p class="text-[#12172D] max-lg:text-center">{{ $t('STAKE_SUBTITLE_2') }}</p>
                 </div>
 
                 <div class="w-1/2 z-[1] max-lg:w-full flex justify-center items-center">
