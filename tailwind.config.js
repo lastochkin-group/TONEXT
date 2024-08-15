@@ -9,7 +9,23 @@ module.exports = {
     './app.vue',
   ],
   theme: {
-    extend: {},
+    extend: {
+      colors: {
+        "bg_color": "#FFFFFF",
+        "secondary_bg_color": "#F7F9FB",
+        "bg_dark_color": "#12172D",
+        "secondary_bg_color": "#252F59",
+        "text_color": "#12172D",
+        "text_dark_color:": "#FFFFFF",
+        "hint_color": "#70758E",
+        "button_color": "#EAEDFB",
+        "button_text_color": "#12172D",
+        "button_dark_color": "#252F59",
+        "button_dark_text_color": "#FFFFFF",
+        "blue": "#0098E9"
+
+      }
+    },
   },
   plugins: [],
 }

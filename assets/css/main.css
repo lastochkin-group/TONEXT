@@ -1,0 +1,10 @@
+@import "bootstrap/scss/bootstrap-grid.scss";
+
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: #12172D;
+}
+
+.no-scroll {
+    overflow: hidden;
+}

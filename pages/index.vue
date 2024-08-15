@@ -1,25 +1,29 @@
+<script setup>
+
+  import Header from '../components/Header/Header.vue'
+  import HeroSection from '../components/HeroSection/HeroSection.vue'
+  import Calculator from '../components/Calculator/Calculator.vue'
+  import StepsSection from '~/components/Steps/StepsSection.vue'
+  import AdvantagesSection from '~/components/Advantages/AdvantagesSection.vue'
+  import FAQSection from '~/components/FAQ/FAQSection.vue'
+  import Footer from '~/components/Footer/Footer.vue'
+
+</script>
+
 <template>
-    <div>
-      <header class="text-center py-24 bg-blue-600 text-white">
-        <h1 class="text-4xl font-bold mb-4">Начните зарабатывать до 4% ежедневно</h1>
-        <p class="mb-8">Децентрализированный Liquid Staking TON</p>
-        <button class="bg-white text-blue-600 px-6 py-3 rounded font-semibold">Начать сейчас</button>
-      </header>
+  <div>
+    <Header />
+
+    <main class="flex flex-col bg-bg_color rounded-t-3xl">
+      <HeroSection />
       <Calculator />
-      <Steps />
-      <Advantages />
-      <Faq />
-    </div>
-  </template>
-  
-  <script setup>
-  import Calculator from '@/components/Calculator.vue'
-  import Steps from '@/components/Steps.vue'
-  import Advantages from '@/components/Advantages.vue'
-  import Faq from '@/components/Faq.vue'
-  </script>
-  
-  <style scoped>
-  /* Custom styles for the main page if needed */
-  </style>
-  
+      <StepsSection />
+      <div class="flex flex-col gap-y-12">
+        <AdvantagesSection />
+        <FAQSection />
+      </div>
+
+      <Footer />
+    </main>
+  </div>
+</template>
